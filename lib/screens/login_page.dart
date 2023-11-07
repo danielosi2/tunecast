@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tunecast/widget/button.dart';
 import 'package:tunecast/widget/text_filled.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,32 +12,25 @@ class SignUpScreen extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: EdgeInsets.all(15.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
-                  'Welcome !',
+                  'Log in',
                   style: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
                 ),
-                const Text(
-                  'Sign up to discover and enjoy',
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                const SizedBox(height: 80),
+                const CustomTextFilled(hint: 'Email'),
+                const SizedBox(height: 13),
+                const CustomTextFilled(hint: 'Password'),
+                const SizedBox(height: 11),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    InkWell(onTap: () {}, child: const Text('Forgot password?', style: TextStyle(color: Colors.deepPurple))),
+                  ],
                 ),
-                const Text(
-                  'All the best music and podcast',
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 20),
-                const CustomTextFilled(hint: 'username'),
-                const SizedBox(height: 12),
-                const CustomTextFilled(hint: 'email'),
-                const SizedBox(height: 12),
-                const CustomTextFilled(hint: 'password'),
-                const SizedBox(height: 12),
-                const CustomTextFilled(hint: 'confirm password'),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 SizedBox(
                   height: 55,
                   child: ElevatedButton(
@@ -50,7 +43,7 @@ class SignUpScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Join now",
+                          "Login",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -61,11 +54,9 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 40),
                 const Text(
-                  'Or sign up with',
+                  'Or sign in with',
                   style: TextStyle(color: Colors.white54, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 25),
