@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tunecast/screens/login_page.dart';
+import 'package:tunecast/screens/signup_page.dart';
 
 class WelcomScreen extends StatelessWidget {
   const WelcomScreen({super.key});
@@ -15,15 +17,15 @@ class WelcomScreen extends StatelessWidget {
           children: [
             const Text(
               'Discover new music',
-              style: TextStyle(fontSize: 32, color: Colors.white),
+              style: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
             ),
             const Text(
               'Explore a vast collection',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
             const Text(
               'of music and podcast',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 35),
             Image.asset(
@@ -31,10 +33,13 @@ class WelcomScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             SizedBox(
-              width: 300,
               height: 55,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SignUpScreen(),
+                  ));
+                },
                 style: const ButtonStyle(
                   foregroundColor: MaterialStatePropertyAll<Color>(Colors.white),
                   backgroundColor: MaterialStatePropertyAll<Color>(Colors.deepPurple),
@@ -63,7 +68,11 @@ class WelcomScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ));
+                  },
                   child: const Text(
                     'Sign in',
                     style: TextStyle(color: Colors.deepPurple),
