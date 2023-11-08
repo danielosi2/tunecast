@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tunecast/screens/home_page.dart';
 import 'package:tunecast/widget/button.dart';
 import 'package:tunecast/widget/text_filled.dart';
 
@@ -34,7 +35,13 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: 55,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      );
+                    },
                     style: const ButtonStyle(
                       foregroundColor: MaterialStatePropertyAll<Color>(Colors.white),
                       backgroundColor: MaterialStatePropertyAll<Color>(Colors.deepPurple),
